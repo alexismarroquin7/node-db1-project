@@ -13,8 +13,8 @@ const create = async account => {
   return getById(id);
 }
 
-const updateById = async (id, account) => {
-  await db("accounts").where({ id }).update(account);
+const updateById = async (id, { name, budget }) => {
+  await db("accounts").where({ id }).update({ name, budget });
   return getById(id);
 }
 
