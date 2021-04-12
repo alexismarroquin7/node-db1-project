@@ -15,7 +15,7 @@ router.get('/:id', mw.checkAccountId, (req, res, next) => {
   res.status(200).json(req.account);
 })
 
-router.post('/', (req, res, next) => {
+router.post('/', mw.checkAccountPayload, (req, res, next) => {
   // DO YOUR MAGIC
 })
 
