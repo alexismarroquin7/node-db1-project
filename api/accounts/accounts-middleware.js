@@ -1,5 +1,10 @@
 exports.checkAccountPayload = (req, res, next) => {
-  // DO YOUR MAGIC
+  const { name, budget } = req.body;
+  if(name && budget){
+    next();
+  } else {
+    res.status(400).json({ message: "name and budget are required fields" });
+  }
 }
 
 exports.checkAccountNameUnique = (req, res, next) => {
